@@ -1,20 +1,23 @@
-<h3> {{ title }}</h3>
-
-<form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="#">
-    <div>
-        <label for="username">Name: </label>
-        <input type="text" formControlName="username">
-    </div>
+<h3 class="text-center"> {{ title }}</h3>
+<div class="container">
+    <form class="form" id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="#">
+        <div>
+            <label class="form-label"  for="username">Name: </label>
+            <input class="form-control" type="text" formControlName="username">
+        </div>
+        
+        <div>
+            <label class="form-label" for="email">Email: </label>
+            <input class="form-control" type="email" formControlName="email">
+        </div>
     
-    <div>
-        <label for="email">Email: </label>
-        <input type="email" formControlName="email">
-    </div>
-
-    <div>
-        <label for="text">Message: </label><br>
-        <textarea formControlName="text" cols="30" rows="10"></textarea>
-    </div>
-    
-    <input [disabled]="!contactForm.valid" type="submit">
-</form>
+        <div>
+            <label class="form-label" for="text">Message: </label><br>
+            <textarea class="form-control" formControlName="text" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input class="btn btn-lg btn-success mt-5" [disabled]="!contactForm.valid" type="submit">
+        </div>
+   
+    </form>
+</div>
